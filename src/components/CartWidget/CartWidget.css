@@ -1,0 +1,12 @@
+.logo-carrito {
+    width: 25px;
+    align-items: center;
+}
+
+.boton-carrito {
+    color: white;
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
+    border-color: white;
+}

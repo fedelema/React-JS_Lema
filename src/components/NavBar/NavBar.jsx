@@ -1,6 +1,7 @@
 import React from 'react';
 import './NavBar.css';
 import RakunNegro from './../../images/rakun-negro.jpeg'
+import CartWidget from '../CartWidget/CartWidget';
 
 function NavBar(props) {
     return (
@@ -11,6 +12,7 @@ function NavBar(props) {
                 <li><a href="">Nosotros</a></li>
                 <li><a href="">Productos</a></li>
                 <li><a href="">Contacto</a></li>
+                <li><CartWidget /></li>
             </ul>
         </div>
     );
