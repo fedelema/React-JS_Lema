@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <ItemListContainer />
+      <ItemListContainer greeting="¡Bienvenidos a RAKUN!"/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
