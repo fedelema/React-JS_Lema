@@ -1,0 +1,31 @@
+.contador {
+    display: flex;
+    justify-content: center;
+}
+
+.boton-MM {
+    background-color: white;
+    text-align: center;
+    font-size:xx-large;
+    margin: 10px 20px 10px 20px;
+    justify-content: center;
+    border-color: black;
+    border-radius: 100px;
+    width: 60px;
+}
+
+.boton-carrito {
+    background-color: white;
+    color: black;
+    margin: 10px;
+    justify-content: center;
+    border-color: black;
+    border-radius: 100px;
+    width: 200px;
+    font-size: medium;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: turquoise;
+}
