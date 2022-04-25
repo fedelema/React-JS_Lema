@@ -1,3 +1,15 @@
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+button:hover {
+  background-color: turquoise;
+}
+
+a:hover {
+  color: turquoise;
+}
+
 .App {
   text-align: center;
 }
