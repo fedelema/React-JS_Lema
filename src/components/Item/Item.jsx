@@ -8,7 +8,7 @@ function Item({items}) {
     return (
         <div>
             <div className='card'/*class="card" style="width: 18rem;"*/>
-                <img src={'./../../images/disenos/' + items.img} /*src='./../../images/disenos/taza-got-1.jpg'*/ /*class="card-img-top"*/ alt={items.nombre} />
+                <img src='https://http2.mlstatic.com/D_NQ_NP_899975-MLA49593639948_042022-W.jpg' /*class="card-img-top"*/ className='img-taza' alt={items.nombre} />
                 <div /*class="card-body"*/>
                     <h3 /*class="card-title"*/>$ {items.precio}</h3>
                     <p /*class="card-text"*/>{items.nombre}</p>
