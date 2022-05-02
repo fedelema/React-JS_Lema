@@ -1,9 +1,7 @@
-import React, {useEffect, useState} from 'react';
-import ItemCount from '../ItemCount/ItemCount';
-import ItemList from '../ItemList/ItemList';
-import './ItemListContainer.css';
+import React, { useEffect, useState } from 'react';
+import ItemDetail from '../ItemDetail/ItemDetail';
 
-const getProducts = () => {
+const getItem = () => {
     const myPromise = new Promise ((resolve, reject) => {
         const productos = [
             {id:"T1", nombre:"Deadpool - Taza Cerámica Blanca", img:"taza-avengers-deadpool.jpg", precio:1200, cat:"TAZAS", material: "Cerámica", desc: "Nuestras tazas tienen una altura de 10cm y una capacidad de 400ml. Son aptas para microondas"}, 
@@ -19,16 +17,12 @@ const getProducts = () => {
     return myPromise;
 }
 
-function ItemListContainer({greeting}) {
-
-    function agregarAlCarrito() {
-        alert("Se agregó el producto al carrito!");
-    }
+function ItemDetailContainer(props) {
 
     const [products, setProducts] = useState ([]);
 
     useEffect (() => {
-        getProducts()
+        getItem()
         .then (res => {
             setProducts(res);
         })
@@ -36,10 +30,9 @@ function ItemListContainer({greeting}) {
     
     return (
         <div>
-            {/* <ItemCount stock={10} initial={0} onAdd={agregarAlCarrito} /> */}
-            <ItemList items={products} />
+            {products.map((item, i) => <ItemDetail items={item} key={item.id} />)}
         </div>
     );
 }
 
-export default ItemListContainer;
+export default ItemDetailContainer;

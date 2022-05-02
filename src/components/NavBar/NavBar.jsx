@@ -9,9 +9,9 @@ function NavBar(props) {
             <p className='nav-nombre'>Tienda Oficial de Rakun - Indumentaria y productos personalizados</p>
             <ul className='nav'>
                 <li><img className='nav-logo' src={RakunNegro} alt="" /></li>
-                <li><a href="">Nosotros</a></li>
-                <li><a href="">Productos</a></li>
-                <li><a href="">Contacto</a></li>
+                <li><a href=''>Nosotros</a></li>
+                <li><a href=''>Productos</a></li>
+                <li><a href=''>Contacto</a></li>
                 <li><CartWidget /></li>
             </ul>
         </div>
