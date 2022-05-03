@@ -18,8 +18,7 @@ function ItemCount({stock, initial, onAdd}) {
     }
 
     return (
-        <div>
-            <p>Remera blanca</p>
+        <div className='item-count'>
             <div className='contador'>
                 <button className='boton-MM' onClick={() => handleMenos()}>-</button>
                 <h2 className='cantidad'>{count}</h2>

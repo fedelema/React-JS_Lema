@@ -2,18 +2,22 @@ import React from 'react';
 import './NavBar.css';
 import RakunNegro from './../../images/rakun-negro.jpeg'
 import CartWidget from '../CartWidget/CartWidget';
+import { NavLink } from 'react-router-dom';
 
 function NavBar(props) {
     return (
         <div>
             <p className='nav-nombre'>Tienda Oficial de Rakun - Indumentaria y productos personalizados</p>
-            <ul className='nav'>
-                <li><img className='nav-logo' src={RakunNegro} alt="" /></li>
-                <li><a href=''>Nosotros</a></li>
-                <li><a href=''>Productos</a></li>
-                <li><a href=''>Contacto</a></li>
-                <li><CartWidget /></li>
-            </ul>
+            <div className='nav'>
+                <NavLink to='/'><img className='nav-logo' src={RakunNegro} alt="" /></NavLink>
+                <ul className='nav-categoria'>
+                    <li><NavLink to='categoria/TAZAS' className={nav => nav.isActive ? 'nav-active' : ''}>Tazas</NavLink></li>
+                    <li><NavLink to='categoria/REMERAS_BLANCAS' className={nav => nav.isActive ? 'nav-active' : ''}>Remeras Blancas</NavLink></li>
+                    <li><NavLink to='categoria/REMERAS_GRISES' className={nav => nav.isActive ? 'nav-active' : ''}>Remeras Grises</NavLink></li>
+                    <li><NavLink to='categoria/REMERAS_RANGLAN' className={nav => nav.isActive ? 'nav-active' : ''}>Remeras Ranglan</NavLink></li>
+                </ul>
+                <CartWidget />
+            </div>
         </div>
     );
 }
