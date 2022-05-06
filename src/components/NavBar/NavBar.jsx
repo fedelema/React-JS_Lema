@@ -2,7 +2,7 @@ import React from 'react';
 import './NavBar.css';
 import RakunNegro from './../../images/rakun-negro.jpeg'
 import CartWidget from '../CartWidget/CartWidget';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function NavBar(props) {
     return (
@@ -16,7 +16,7 @@ function NavBar(props) {
                     <li><NavLink to='categoria/REMERAS_GRISES' className={nav => nav.isActive ? 'nav-active' : ''}>Remeras Grises</NavLink></li>
                     <li><NavLink to='categoria/REMERAS_RANGLAN' className={nav => nav.isActive ? 'nav-active' : ''}>Remeras Ranglan</NavLink></li>
                 </ul>
-                <CartWidget />
+                <Link to='/cart'><CartWidget /></Link>
             </div>
         </div>
     );
