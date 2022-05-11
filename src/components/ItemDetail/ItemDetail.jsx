@@ -1,13 +1,15 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import { Link } from 'react-router-dom';
+import CartContext from '../../context/CartContext';
 import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.css'
 
 function ItemDetail({items}) {
 
-    const [cantidadProd, setCantidadProd] = useState(null);
+    const cartC = useContext(CartContext);
+    
     function addHandler (quantityToAdd) {
-        setCantidadProd(quantityToAdd);
+        cartC.addProduct({cantidad: quantityToAdd, ...items});
     }
 
     return (
@@ -21,10 +23,16 @@ function ItemDetail({items}) {
                     <h1>{items?.nombre}</h1>
                     <h2>$ {items?.precio}</h2>
                     <p>{items?.detalle}</p>
-                    {cantidadProd ? 
-                        <Link to='/cart'><button className='boton-terminar-compra'>Terminar compra (cantidad: {cantidadProd})</button></Link> :
+                    <div>
                         <ItemCount stock={items?.stock} initial={1} onAdd={addHandler} />
-                    }
+                        {/* <button className='boton-opciones-compra' onClick={() => console.log(cartC.products)}>Imprimir carrito</button> */}
+                        {/* <button className='boton-opciones-compra' onClick={() => console.log(cartC.isInCart(items.id))}>Is In Cart</button> */}
+                        <button className='boton-opciones-compra' onClick={() => cartC.removeProduct(items)}>Quitar producto</button>
+                        <div>
+                            <Link to='/'><button className='boton-opciones-compra'>Seguir comprando</button></Link>
+                            <Link to='/cart'><button className='boton-opciones-compra'>Terminar compra</button></Link>
+                        </div>
+                    </div>
                     <h4>Material: {items?.material}</h4>
                     <h4>Descripción: {items?.descripcion}</h4>
                 </div>

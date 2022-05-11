@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './NavBar.css';
 import RakunNegro from './../../images/rakun-negro.jpeg'
 import CartWidget from '../CartWidget/CartWidget';
 import { Link, NavLink } from 'react-router-dom';
+import CartContext from '../../context/CartContext';
 
 function NavBar(props) {
+
+    const cartC = useContext(CartContext);
+
     return (
         <div>
             <p className='nav-nombre'>Tienda Oficial de Rakun - Indumentaria y productos personalizados</p>
@@ -16,7 +20,12 @@ function NavBar(props) {
                     <li><NavLink to='categoria/REMERAS_GRISES' className={nav => nav.isActive ? 'nav-active' : ''}>Remeras Grises</NavLink></li>
                     <li><NavLink to='categoria/REMERAS_RANGLAN' className={nav => nav.isActive ? 'nav-active' : ''}>Remeras Ranglan</NavLink></li>
                 </ul>
-                <Link to='/cart'><CartWidget /></Link>
+                <div className='nav-carrito'>
+                    <Link to='/cart'>
+                        <CartWidget />
+                    </Link>
+                    <button className='boton-vaciar-carrito' onClick={() => cartC.clearCart()}>Vaciar carrito</button>
+                </div>
             </div>
         </div>
     );
