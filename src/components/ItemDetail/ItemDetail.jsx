@@ -24,14 +24,15 @@ function ItemDetail({items}) {
                     <h2>$ {items?.precio}</h2>
                     <p>{items?.detalle}</p>
                     <div>
-                        <ItemCount stock={items?.stock} initial={1} onAdd={addHandler} />
-                        {/* <button className='boton-opciones-compra' onClick={() => console.log(cartC.products)}>Imprimir carrito</button> */}
-                        {/* <button className='boton-opciones-compra' onClick={() => console.log(cartC.isInCart(items.id))}>Is In Cart</button> */}
-                        <button className='boton-opciones-compra' onClick={() => cartC.removeProduct(items)}>Quitar producto</button>
                         <div>
-                            <Link to='/'><button className='boton-opciones-compra'>Seguir comprando</button></Link>
-                            <Link to='/cart'><button className='boton-opciones-compra'>Terminar compra</button></Link>
+                            {cartC.isInCart(items.id) === true ?
+                                <Link to='/cart'><button className='boton-opciones-compra'>Terminar compra</button></Link> :
+                                <ItemCount stock={items?.stock} initial={1} onAdd={addHandler} />
+                            }
                         </div>
+                        {/* <button className='boton-opciones-compra' onClick={() => console.log(cartC.products)}>Imprimir carrito</button> */}
+                        <button className='boton-opciones-compra' onClick={() => cartC.removeProduct(items)}>Quitar producto</button>
+                        <Link to='/'><button className='boton-opciones-compra'>Seguir comprando</button></Link>
                     </div>
                     <h4>Material: {items?.material}</h4>
                     <h4>Descripción: {items?.descripcion}</h4>

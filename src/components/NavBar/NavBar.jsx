@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import './NavBar.css';
 import RakunNegro from './../../images/rakun-negro.jpeg'
 import CartWidget from '../CartWidget/CartWidget';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import CartContext from '../../context/CartContext';
 
 function NavBar(props) {
@@ -20,12 +20,7 @@ function NavBar(props) {
                     <li><NavLink to='categoria/REMERAS_GRISES' className={nav => nav.isActive ? 'nav-active' : ''}>Remeras Grises</NavLink></li>
                     <li><NavLink to='categoria/REMERAS_RANGLAN' className={nav => nav.isActive ? 'nav-active' : ''}>Remeras Ranglan</NavLink></li>
                 </ul>
-                <div className='nav-carrito'>
-                    <Link to='/cart'>
-                        <CartWidget />
-                    </Link>
-                    <button className='boton-vaciar-carrito' onClick={() => cartC.clearCart()}>Vaciar carrito</button>
-                </div>
+                <CartWidget />
             </div>
         </div>
     );
