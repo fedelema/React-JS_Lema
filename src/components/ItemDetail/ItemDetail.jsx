@@ -31,7 +31,13 @@ function ItemDetail({items}) {
                             }
                         </div>
                         {/* <button className='boton-opciones-compra' onClick={() => console.log(cartC.products)}>Imprimir carrito</button> */}
-                        <button className='boton-opciones-compra' onClick={() => cartC.removeProduct(items)}>Quitar producto</button>
+                        {cartC.isInCart(items.id) === true ?
+                            <div>
+                                <button className='boton-opciones-compra' onClick={() => cartC.removeProduct(items)}>Quitar producto</button>
+                                <button className='boton-opciones-compra' onClick={() => cartC.removeOneProduct(items)}>Quitar 1 unidad</button>
+                            </div> :
+                            ''
+                        }
                         <Link to='/'><button className='boton-opciones-compra'>Seguir comprando</button></Link>
                     </div>
                     <h4>Material: {items?.material}</h4>

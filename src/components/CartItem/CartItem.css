@@ -1,0 +1,31 @@
+.cart-item {
+    display: flex;
+    align-items: center;
+    background-color: lightgray;
+    padding: 20px;
+    margin: 20px;
+    border: solid;
+    border-color: black;
+    border-radius: 10px;
+}
+
+.cart-item img {
+    width: 20%;
+    margin: 20px;
+    border: solid;
+    border-color: black;
+    border-radius: 10px;
+}
+
+.cart-item-detalle {
+    width: 60%;
+}
+
+.cart-item button {
+    background-color: red;
+    color: white;
+    margin: 10px;
+    padding: 10px;
+    border-color: black;
+    border-radius: 10px;
+}
