@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
-import { collection, getDocs, getFirestore } from 'firebase/firestore';
+import { addDoc, collection, getDocs, getFirestore } from 'firebase/firestore';
 import ItemList from '../ItemList/ItemList';
 import Loading from '../Loading/Loading';
 import './ItemListContainer.css';
@@ -15,6 +15,10 @@ function ItemListContainer({greeting}) {
         setLoading(true);
         const db = getFirestore();
         const itemsCollection = collection(db, 'items');
+
+        // PARA AGREGAR ITEMS A FIRESTORE
+        /* const nuevoItem = {}
+        addDoc(itemsCollection, nuevoItem); */
 
         getDocs(itemsCollection)
             .then((snapshot) => {
