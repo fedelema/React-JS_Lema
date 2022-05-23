@@ -10,10 +10,10 @@ function Cart(props) {
     const item = cartC.products;
     console.log(item);
 
-    function finCompra() {
+/*     function finCompra() {
         cartC.clearCart();
         alert('GRACIAS POR TU COMPRA');
-    }
+    } */
 
     return (
         <div>
@@ -21,7 +21,7 @@ function Cart(props) {
             {cartC.getCartQuantity() > 0 ?
                 <div className='div-precio-total'>
                     <h1>Precio total: ${cartC.totalPrice()}</h1>
-                    <button className='boton-opciones-compra' onClick={finCompra}>Finalizar compra</button>
+                    <Link to='/checkout'><button className='boton-opciones-compra'>Ir a finalizar compra</button></Link>
                     <Link to='/'><button className='boton-opciones-compra'>Seguir comprando</button></Link>
                 </div> :
                 <div>

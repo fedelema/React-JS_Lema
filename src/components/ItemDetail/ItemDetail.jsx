@@ -26,7 +26,7 @@ function ItemDetail({items}) {
                     <div>
                         <div>
                             {cartC.isInCart(items.id) === true ?
-                                <Link to='/cart'><button className='boton-opciones-compra'>Terminar compra</button></Link> :
+                                <Link to='/cart'><button className='boton-opciones-compra'>Ir al carrito</button></Link> :
                                 <ItemCount stock={items?.stock} initial={1} onAdd={addHandler} />
                             }
                         </div>
